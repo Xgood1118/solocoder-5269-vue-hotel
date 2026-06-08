@@ -1,0 +1,1 @@
+打开 PMS 系统，登进去后默认落到 /dashboard，但首页除了左边菜单和顶部一栏，主区域是空的，啥都没渲染出来。控制台刷一行红字说什么 "Bed" not exported from @element-plus/icons-vue，看着像 Dashboard.vue 里引入了一个 element-plus 图标库根本不存在的图标，整个组件直接挂掉。试了一下 npm run build 也是同一条报错直接退出，dist/ 起不来。八个核心页面里房态图、预订、入住、退房、发票、渠道、报表那七个都正常打开，就是这个首页 Dashboard 残了。检查修复一下。
