@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f5f7fa;
+}
+
+.status-available {
+  background-color: #67c23a;
+  color: white;
+}
+
+.status-booked {
+  background-color: #e6a23c;
+  color: white;
+}
+
+.status-occupied {
+  background-color: #f56c6c;
+  color: white;
+}
+
+.status-dirty {
+  background-color: #909399;
+  color: white;
+}
+
+.status-maintenance {
+  background-color: #409eff;
+  color: white;
+}
+
+.text-available {
+  color: #67c23a;
+}
+
+.text-booked {
+  color: #e6a23c;
+}
+
+.text-occupied {
+  color: #f56c6c;
+}
+
+.text-dirty {
+  color: #909399;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+
+.page-container {
+  padding: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #303133;
+}

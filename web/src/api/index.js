@@ -1,0 +1,63 @@
+import request from './request'
+
+export const login = (data) => request.post('/auth/login', data)
+export const getCurrentUser = () => request.get('/auth/me')
+
+export const getRoomTypes = () => request.get('/rooms/types')
+export const getRoomType = (id) => request.get(`/rooms/types/${id}`)
+export const createRoomType = (data) => request.post('/rooms/types', data)
+export const updateRoomType = (id, data) => request.put(`/rooms/types/${id}`, data)
+
+export const getRooms = (params) => request.get('/rooms', { params })
+export const getRoom = (id) => request.get(`/rooms/${id}`)
+export const createRoom = (data) => request.post('/rooms', data)
+export const updateRoomStatus = (id, status) => request.put(`/rooms/${id}/status`, { status })
+export const cleanRoom = (id) => request.put(`/rooms/${id}/clean`)
+
+export const getRoomMapStatuses = (params) => request.get('/rooms/map/statuses', { params })
+
+export const getBookings = (params) => request.get('/bookings', { params })
+export const getBooking = (id) => request.get(`/bookings/${id}`)
+export const createBooking = (data) => request.post('/bookings', data)
+export const updateBooking = (id, data) => request.put(`/bookings/${id}`, data)
+export const updateBookingStatus = (id, status) => request.put(`/bookings/${id}/status`, { status })
+export const calculatePrice = (data) => request.post('/bookings/calculate-price', data)
+export const checkAvailability = (params) => request.get('/bookings/availability/check', { params })
+
+export const getCheckins = (params) => request.get('/checkin', { params })
+export const getCheckin = (id) => request.get(`/checkin/${id}`)
+export const createCheckin = (data) => request.post('/checkin', data)
+export const verifyIdCard = (data) => request.post('/checkin/verify-id', data)
+export const addDeposit = (id, data) => request.post(`/checkin/${id}/add-deposit`, data)
+export const updateRoomCard = (id, room_card_no) => request.put(`/checkin/${id}/room-card`, { room_card_no })
+
+export const getCheckouts = (params) => request.get('/checkout', { params })
+export const getCheckout = (id) => request.get(`/checkout/${id}`)
+export const calculateCheckout = (data) => request.post('/checkout/calculate', data)
+export const createCheckout = (data) => request.post('/checkout', data)
+export const getMinibarItems = () => request.get('/checkout/minibar/items')
+export const createMinibarItem = (data) => request.post('/checkout/minibar/items', data)
+
+export const getChannels = () => request.get('/channels')
+export const createChannel = (data) => request.post('/channels', data)
+export const updateChannel = (id, data) => request.put(`/channels/${id}`, data)
+export const getSyncStatus = () => request.get('/channels/sync/status')
+export const getSyncQueue = (params) => request.get('/channels/sync/queue', { params })
+export const triggerSync = () => request.post('/channels/sync/trigger')
+export const retrySync = (id) => request.post(`/channels/sync/retry/${id}`)
+export const pullChannelOrders = (channelCode) => request.post(`/channels/pull-orders/${channelCode}`)
+
+export const getDailyReport = (date) => request.get('/reports/daily', { params: { date } })
+export const getMonthlyReport = (params) => request.get('/reports/monthly', { params })
+export const getOverviewReport = () => request.get('/reports/overview')
+export const getRoomTypeStats = (params) => request.get('/reports/room-types', { params })
+export const getChannelStats = (params) => request.get('/reports/channels', { params })
+export const getOccupancyTrend = (days) => request.get('/reports/trend/occupancy', { params: { days } })
+export const getRevenueTrend = (days) => request.get('/reports/trend/revenue', { params: { days } })
+
+export const getInvoices = (params) => request.get('/invoice', { params })
+export const getInvoice = (id) => request.get(`/invoice/${id}`)
+export const createInvoice = (data) => request.post('/invoice', data)
+export const voidInvoice = (id) => request.post(`/invoice/${id}/void`)
+export const calculateInvoice = (data) => request.post('/invoice/calculate', data)
+export const getTaxRate = () => request.get('/invoice/tax/rate')
