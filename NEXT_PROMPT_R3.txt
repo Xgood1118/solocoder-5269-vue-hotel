@@ -1,0 +1,1 @@
+酒店 PMS 后端服务起来后，前端登录还是 500。R2 改过 vite proxy target 改成了 :3000，但后端 `server/app.js` 里 `const PORT = process.env.PORT || 8100` 一直没人动，npm start 默认还是 :8100。直接 `cd server && npm start` 跑，前端一登录就 502 / 500；想用还得自己 `PORT=3000 node app.js` 才行，不通用。检查修复一下。
