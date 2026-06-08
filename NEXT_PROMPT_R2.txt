@@ -1,0 +1,1 @@
+用 admin/admin123 试登录，浏览器 console 刷红字 POST /api/auth/login 500，但 curl 同样的接口 200 是好的。看了下 vite.config.js 的 proxy target 写的是 :8100，server 实际跑在 :3000，所以走前端代理的请求全失败。受保护的路由全都因为登录不下来被挡在 /login 页面，业务流走不通。检查修复一下。

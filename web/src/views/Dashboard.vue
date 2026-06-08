@@ -4,7 +4,7 @@
       <el-col :span="6">
         <el-card class="stat-card stat-today">
           <div class="stat-icon">
-            <el-icon :size="32"><Bed /></el-icon>
+            <el-icon :size="32"><House /></el-icon>
           </div>
           <div class="stat-content">
             <div class="stat-value">{{ overview.today?.occupiedRooms || 0 }}</div>
@@ -129,7 +129,7 @@
 import { ref, onMounted, nextTick } from 'vue'
 import * as echarts from 'echarts'
 import { getOverviewReport, getOccupancyTrend, getRoomTypeStats, getChannelStats } from '../api'
-import { Bed, Money, Calendar, Key } from '@element-plus/icons-vue'
+import { House, Money, Calendar, Key } from '@element-plus/icons-vue'
 import dayjs from 'dayjs'
 
 const overview = ref({})
